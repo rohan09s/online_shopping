@@ -1,0 +1,46 @@
+const express= require('express')
+const { registerController,loginController,forgotPasswordController, testController, getAllUsersController } = require('../controllers/authControllers')
+const { requireSignIn, isAdmin } = require('../middlewares/auhMiddlewares')
+
+const router= express.Router()
+
+router.post("/register",registerController)
+router.post("/login", loginController)
+router.post("/forgotpass",forgotPasswordController)
+router.get("/allusers", getAllUsersController)
+router.get("/test", requireSignIn,isAdmin, testController )
+
+router.get("/userauth",(req,res)=>{
+    res.status(200).send({ok:true})
+})
+
+router.get("/adminauth", requireSignIn, isAdmin, (req,res)=>{
+    res.status(200).send({ok:true})
+})
+
+module.exports=router
+
+
+// const express= require('express')
+// const { registerController, loginController, testController, forgotPasswordController, getAllUsersController } = require('../controllers/authControllers')
+// const { isAdmin, requireSignIn } = require('../middlewares/authMiddlewares')
+// const router= express.Router()
+
+// router.post("/register", registerController)
+// router.post("/login", loginController)
+// router.post("/forgotpass", forgotPasswordController)
+// router.get("/allusers", getAllUsersController)
+// router.get("/test", requireSignIn, isAdmin, testController)
+
+// router.get("/userauth",requireSignIn,(req,res)=>{
+//     res.status(200).send({ok:true})
+// })
+// router.get("/adminauth",requireSignIn,isAdmin,(req,res)=>{
+//     res.status(200).send({ok:true})
+// })
+
+// module.exports= router
+
+
+
+// // The sequence is very important while calling many controllers in the same router.get or router.post or using any method of router. 
