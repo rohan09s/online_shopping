@@ -10,19 +10,3 @@ router.put("/update-category/:id", requireSignIn, isAdmin ,updateCategoryControl
 router.delete("/delete-category/:id",requireSignIn,isAdmin,deleteCategoryController)
 
 module.exports=router
-
-
-
-
-// const express=require('express')
-// const { createCategoryController, getAllCategoriesController, getSingleCategoryController, updateCategoryController, deleteCategoryController } = require('../controllers/categoryControllers')
-// const { requireSignIn, isAdmin } = require('../middlewares/authMiddlewares')
-// const router= express.Router()
-
-// router.post("/create-category", requireSignIn, isAdmin, createCategoryController)
-// router.get("/all-categories", getAllCategoriesController)
-// router.get("/single-category/:slug",getSingleCategoryController)
-// router.put("/update-category/:id", requireSignIn, isAdmin, updateCategoryController)
-// router.delete("/delete-category/:id", requireSignIn, isAdmin, deleteCategoryController)
-
-// module.exports= router
