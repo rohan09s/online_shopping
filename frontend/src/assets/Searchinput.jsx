@@ -6,7 +6,7 @@ import Col from 'react-bootstrap/Col';
 import { useSearch } from '../context/search';
 import { useNavigate } from 'react-router-dom';
 
-function Searchinput() {
+function SearchInput() {
     const [values,setValues]=useSearch()
     const navigate= useNavigate()
     
@@ -42,4 +42,4 @@ function Searchinput() {
   )
 }
 
-export default Searchinput
+export default SearchInput
