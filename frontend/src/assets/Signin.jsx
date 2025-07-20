@@ -58,10 +58,6 @@ function Signin() {
               onChange={(e) => setPassword(e.target.value)}
             />
           </Form.Group>
-          
-          
-         
-
           <Button variant="primary" type="submit" className="my-4">
             Submit
           </Button>
