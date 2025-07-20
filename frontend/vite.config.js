@@ -15,7 +15,7 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   server: {
-    host: '0.0.0.0',  // 👈 Important for Render
-    port: 5174        // 👈 Optional: you can omit this to allow auto port selection
+    host: '0.0.0.0',  // Important while deploying on Render
+    port: 5174        // For auto port selection
   }
 })
